@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="IndexPage.html" />
     <Content Include="Task4.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -75,6 +76,7 @@
     <Compile Include="IISHandler2.cs" />
     <Compile Include="IISHandler3.cs" />
     <Compile Include="IISHandler4.cs" />
+    <Compile Include="IISHandler5.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

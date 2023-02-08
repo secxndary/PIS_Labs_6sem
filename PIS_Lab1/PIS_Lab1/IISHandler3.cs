@@ -5,8 +5,6 @@ namespace PIS_Lab1
 {
     public class IISHandler3 : IHttpHandler
     {
-        #region Члены IHttpHandler
-
         public bool IsReusable
         {
             get { return true; }
@@ -16,12 +14,22 @@ namespace PIS_Lab1
         {
             HttpRequest req = context.Request;
             HttpResponse res = context.Response;
-            var parmA = req["parmA"];
-            var parmB = req["parmB"];
-            res.AddHeader("Content-Type", "text/plain");
-            res.Write($"===== PUT =====\nparmA = {parmA}\nparmB = {parmB}");
-        }
 
-        #endregion
+            if (req.HttpMethod != "PUT")
+            {
+                res.StatusCode = 405;
+                res.AddHeader("Content-Type", "text/html");
+                res.Write("<h2>Only PUT method allowed.</h2>");
+            }
+            else
+            {
+                var parmA = req["parmA"];
+                var parmB = req["parmB"];
+                res.AddHeader("Content-Type", "text/plain");
+                res.Write($"===== PUT =====\n" +
+                          $"parmA = {(parmA != null ? parmA : "null")}\n" +
+                          $"parmB = {(parmB != null ? parmB : "null")}");
+            }
+        }
     }
 }
