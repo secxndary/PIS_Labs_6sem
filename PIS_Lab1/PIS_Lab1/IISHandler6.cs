@@ -28,7 +28,7 @@ namespace PIS_Lab1
                     var x = int.Parse(req.Form["x"]);
                     var y = int.Parse(req.Form["y"]);
                     var mul = x * y;
-                    res.Write("<h1>mul</h1>");
+                    res.Write(mul);
                 }
                 catch
                 {
