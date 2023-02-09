@@ -19,7 +19,7 @@ public partial class Form1 : Form
         var x = textBox1.Text;
         var y = textBox2.Text;
 
-
+        // передаем параметры x и y в теле POST-запроса
         var formContent = new FormUrlEncodedContent(new[]
         {
             new KeyValuePair<string, string>("x", x),
@@ -27,8 +27,8 @@ public partial class Form1 : Form
         });
 
         HttpClient client = new HttpClient();
+        // сам post-запрос; асинхронный, поэтому используем async\await
         var res = await client.PostAsync("https://localhost:44381/4", formContent);
         textBox3.Text = await res.Content.ReadAsStringAsync();
-        
     }
 }

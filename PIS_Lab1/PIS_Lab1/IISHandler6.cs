@@ -28,7 +28,14 @@ namespace PIS_Lab1
                     var x = int.Parse(req.Form["x"]);
                     var y = int.Parse(req.Form["y"]);
                     var mul = x * y;
-                    res.Write(mul);
+                    res.Write("<html>" +
+                                "<head>" +
+                                    "<link rel='stylesheet' href='bootstrap.css' />" +
+                                "</head>" +
+                                "<body>" +
+                                    $"<h1 class='m-5 text-center'>{x} * {y} = {mul}</h1>" +
+                                "</body>" +
+                              "</html>");
                 }
                 catch
                 {
@@ -41,7 +48,7 @@ namespace PIS_Lab1
             {
                 res.StatusCode = 405;
                 res.AddHeader("Content-Type", "text/html");
-                res.Write("<h2>Incorrect method.</h2>");
+                res.Write("<h2>Only GET/POST methods allowed.</h2>");
             }
         }
     }

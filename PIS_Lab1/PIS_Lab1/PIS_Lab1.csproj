@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="bootstrap.css" />
     <Content Include="IndexPage.html" />
-    <Content Include="Task4.html" />
     <Content Include="Task6.html" />
     <Content Include="Task5.html" />
     <Content Include="Web.config" />

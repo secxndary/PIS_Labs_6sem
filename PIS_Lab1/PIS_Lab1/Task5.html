@@ -15,18 +15,15 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://localhost:44381/1?parmA=AA&parmB=BB&parmC=CC">
+                        <a class="nav-link" href="https://localhost:44381/1.vad?parmA=AA&parmB=BB&parmC=CC">
                             Task 1
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://localhost:44381/4">Task 4</a>
+                        <a class="nav-link active" href="https://localhost:44381/5.vad">Task 5</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="https://localhost:44381/5">Task 5</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://localhost:44381/6">Task 6</a>
+                        <a class="nav-link" href="https://localhost:44381/6.vad">Task 6</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -55,7 +52,7 @@
         function getNumbersMultiplication() {
             let formData = new FormData(document.getElementById("form5"));
             let xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://localhost:44381/5', false);
+            xhr.open('POST', 'https://localhost:44381/5.vad', false);
             xhr.send(formData);
 
             let input = document.getElementById("inner");
