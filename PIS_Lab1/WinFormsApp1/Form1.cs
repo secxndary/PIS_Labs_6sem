@@ -17,7 +17,7 @@ public partial class Form1 : Form
         var x = textBox1.Text;
         var y = textBox2.Text;
 
-        // передаем параметры x и y в теле POST-запроса
+        // РїРµСЂРµРґР°РµРј РїР°СЂР°РјРµС‚СЂС‹ x Рё y РІ С‚РµР»Рµ POST-Р·Р°РїСЂРѕСЃР°
         var formContent = new FormUrlEncodedContent(new[]
         {
             new KeyValuePair<string, string>("x", x),
@@ -25,7 +25,7 @@ public partial class Form1 : Form
         });
 
         HttpClient client = new HttpClient();
-        // сам post-запрос; асинхронный, поэтому используем async\await
+        // СЃР°Рј post-Р·Р°РїСЂРѕСЃ; Р°СЃРёРЅС…СЂРѕРЅРЅС‹Р№, РїРѕСЌС‚РѕРјСѓ РёСЃРїРѕР»СЊР·СѓРµРј async\await
         var res = await client.PostAsync("https://localhost:44381/4.vad", formContent);
         textBox3.Text = await res.Content.ReadAsStringAsync();
     }
