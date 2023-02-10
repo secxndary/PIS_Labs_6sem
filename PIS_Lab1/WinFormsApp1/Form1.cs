@@ -9,10 +9,8 @@ public partial class Form1 : Form
         InitializeComponent();
     }
 
-    private void textBox1_TextChanged(object sender, EventArgs e)
-    {
+    private void textBox1_TextChanged(object sender, EventArgs e) { }
 
-    }
 
     async private void button1_Click(object sender, EventArgs e)
     {
@@ -28,7 +26,7 @@ public partial class Form1 : Form
 
         HttpClient client = new HttpClient();
         // сам post-запрос; асинхронный, поэтому используем async\await
-        var res = await client.PostAsync("https://localhost:44381/4", formContent);
+        var res = await client.PostAsync("https://localhost:44381/4.vad", formContent);
         textBox3.Text = await res.Content.ReadAsStringAsync();
     }
 }
