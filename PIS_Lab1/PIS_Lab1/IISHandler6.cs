@@ -18,7 +18,6 @@ namespace PIS_Lab1
 
             if (req.HttpMethod == "GET")
             {
-                res.ContentType = "text/html";
                 res.WriteFile("Task6.html");
             }
             else if (req.HttpMethod == "POST")
