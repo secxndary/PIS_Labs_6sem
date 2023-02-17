@@ -2,10 +2,8 @@
 using System.Net.WebSockets;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.WebSockets;
 using System.Threading;
 using System.Text;
-using System.Net.Sockets;
 
 namespace PIS_Lab2
 {
@@ -21,13 +19,9 @@ namespace PIS_Lab2
         public void ProcessRequest(HttpContext context)
         {
             if (context.IsWebSocketRequest)
-            {
                 context.AcceptWebSocketRequest(WebSocketRequest);
-            }
             else
-            {
                 context.Response.Write("not ws request");
-            }
         }
         private async Task WebSocketRequest(WebSocketContext context)
         {
@@ -35,10 +29,19 @@ namespace PIS_Lab2
             string msg = await Receive();
             await Send(msg);
             int i = 0;
-            while(socket.State == WebSocketState.Open) 
-            { 
-                Thread.Sleep(1000);
-                await Send($"[{i++}]");
+            while (true)
+            {
+                // If socket is being closed on client side, we need to close it on server.
+                // Nuance is that no matter what, connection will be closed only after about 1 minute. 
+                if (socket.State != WebSocketState.Open)
+                {
+                    await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "closed by me", CancellationToken.None);
+                }
+                while (socket.State == WebSocketState.Open)
+                {
+                    Thread.Sleep(1000);
+                    await Send($"[{i++}]");
+                }
             }
         }
         private async Task<String> Receive()
