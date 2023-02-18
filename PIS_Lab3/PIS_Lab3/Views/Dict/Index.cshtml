@@ -1,5 +1,5 @@
 ﻿@using PIS_Lab3.Models;
-@model List<PhoneBook>
+@model IEnumerable<PhoneBook>
 @{
     ViewBag.Title = "PhoneBook List";
 }
@@ -11,7 +11,10 @@
             <h2 class="text-dark">PhoneBooks List</h2>
         </div>
         <div class="col-3 text-end">
-            <a class="btn btn-primary p-2 fs-6" style="width: 200px" href="Create">Create PhoneBook</a>
+            <a class="btn btn-primary p-2 fs-6" style="width: 240px" href="Create">
+                <i class="bi bi-plus-circle"></i> 
+                Create PhoneBook
+            </a>
         </div>
     </div>
 
@@ -52,10 +55,19 @@
                     </td>
                     <td width="15%" class="align-middle">
                         <div class="btn-group w-75" role="group">
-                            <a href="Delete/@item.Id" class="btn btn-danger mx-1">
-                                <i class="bi bi-trash3"></i>
-                                &nbsp; Delete
-                            </a>
+                            <form action="Delete/@item.Id" method="post">
+                                <button class="btn btn-danger mx-1" type="submit">
+                                    <i class="bi bi-trash3"></i>
+                                    &nbsp; Delete
+                                </button>
+                            </form>
+
+
+
+                            @*<a href="Delete/@item.Id" class="btn btn-danger mx-1">
+                                    <i class="bi bi-trash3"></i>
+                                    &nbsp; Delete
+                                </a>*@
                         </div>
                     </td>
                 </tr>

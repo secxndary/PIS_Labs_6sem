@@ -1,5 +1,4 @@
 ﻿@model PIS_Lab3.Models.PhoneBook
-
 @{
     ViewBag.Title = "Edit PhoneBook";
 }
@@ -37,8 +36,6 @@
                     </label>
                     @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-
-                    @*<input class="form-control" name="PhoneNumber" pattern="\+375[2349]{2}[0-9]{7}" required />*@
                 </div>
             </div>
 

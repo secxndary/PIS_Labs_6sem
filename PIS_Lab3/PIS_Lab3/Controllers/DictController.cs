@@ -37,6 +37,8 @@ namespace PIS_Lab3.Controllers
         }
 
 
+
+
         // GET: Index
         public ActionResult Index()
         {
@@ -61,6 +63,7 @@ namespace PIS_Lab3.Controllers
             newBooksList.Add(phoneBook);
             var convertedJson = JsonConvert.SerializeObject(newBooksList, Formatting.Indented);
             System.IO.File.WriteAllText(Server.MapPath("~/App_Data/phoneBooks.json"), convertedJson);
+            TempData["success"] = "Phonebook created succesfully";
             return Redirect("/Dict/Index");
         }
 
@@ -84,11 +87,9 @@ namespace PIS_Lab3.Controllers
             books.Add(phoneBook);
             var convertedJson = JsonConvert.SerializeObject(books, Formatting.Indented);
             System.IO.File.WriteAllText(Server.MapPath("~/App_Data/phoneBooks.json"), convertedJson);
+            TempData["success"] = "Phonebook updated succesfully";
             return Redirect("/Dict/Index");
         }
-
-
-
 
 
         // GET: Delete
@@ -103,34 +104,12 @@ namespace PIS_Lab3.Controllers
         public ActionResult Delete(PhoneBook phoneBook)
         {
             var books = GetPhoneBooks();
-            var bookFromJson = books.Find(x => x.PhoneNumber == phoneBook.PhoneNumber);
+            var bookFromJson = books.Find(x => x.Id == phoneBook.Id);
             books.Remove(bookFromJson);
             var convertedJson = JsonConvert.SerializeObject(books, Formatting.Indented);
             System.IO.File.WriteAllText(Server.MapPath("~/App_Data/phoneBooks.json"), convertedJson);
+            TempData["success"] = "Phonebook deleted succesfully";
             return Redirect("/Dict/Index");
         }
-
-
-
-
-
-        //// Sort the table
-        //public ActionResult SortByColumn(string column)
-        //{
-        //    var books = GetPhoneBooks();
-        //    switch (column)
-        //    {
-        //        case "Name":
-        //            books = books.OrderBy(x => x.Name).ToList();
-        //            break;
-        //        case "Surname":
-        //            books = books.OrderBy(x => x.Surname).ToList();
-        //            break;
-        //        default:
-        //            break;
-        //    }
-
-        //    return PartialView("_PhoneBookTable", books);
-        //}
     }
 }
