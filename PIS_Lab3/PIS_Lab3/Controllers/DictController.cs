@@ -9,36 +9,6 @@ namespace PIS_Lab3.Controllers
     public class DictController : Controller
     {
 
-        // Method to get first free ID in JSON list, 
-        // e.g. if we deleted elements with id=4 and id=5,
-        // this method will return me 4 as first free id.
-        // If we have consecutive ids (1,2,3,...,10),
-        // this method will return 11.
-        private int GetFirstFreeId()
-        {
-            var ids = GetPhoneBooks().Select(x => x.Id).ToList();
-            var firstFreeId = 0;
-            for (int i = 1; i <= ids.Max(); i++)
-            {
-                firstFreeId = i;
-                if (!ids.Contains(firstFreeId))
-                    return firstFreeId;
-            }
-            return firstFreeId + 1;
-        }
-
-
-        // Get books from JSON
-        private List<PhoneBook> GetPhoneBooks()
-        {
-            string json = System.IO.File.ReadAllText(Server.MapPath("~/App_Data/phoneBooks.json"));
-            List<PhoneBook> books = JsonConvert.DeserializeObject<List<PhoneBook>>(json);
-            return books;
-        }
-
-
-
-
         // GET: Index
         public ActionResult Index()
         {
@@ -92,13 +62,6 @@ namespace PIS_Lab3.Controllers
         }
 
 
-        // GET: Delete
-        public ActionResult Delete(int? id)
-        {
-            var phoneWithId = GetPhoneBooks().First(x => x.Id == id);
-            return View();
-        }
-
         // POST: Delete
         [HttpPost]
         public ActionResult Delete(PhoneBook phoneBook)
@@ -111,5 +74,38 @@ namespace PIS_Lab3.Controllers
             TempData["success"] = "Phonebook deleted succesfully";
             return Redirect("/Dict/Index");
         }
+
+
+
+
+
+
+        // Method to get first free ID in JSON list, 
+        // e.g. if we deleted elements with id=4 and id=5,
+        // this method will return me 4 as first free id.
+        // If we have consecutive ids (1,2,3,...,10),
+        // this method will return 11.
+        private int GetFirstFreeId()
+        {
+            var ids = GetPhoneBooks().Select(x => x.Id).ToList();
+            var firstFreeId = 0;
+            for (int i = 1; i <= ids.Max(); i++)
+            {
+                firstFreeId = i;
+                if (!ids.Contains(firstFreeId))
+                    return firstFreeId;
+            }
+            return firstFreeId + 1;
+        }
+
+
+        // Get books from JSON
+        private List<PhoneBook> GetPhoneBooks()
+        {
+            string json = System.IO.File.ReadAllText(Server.MapPath("~/App_Data/phoneBooks.json"));
+            List<PhoneBook> books = JsonConvert.DeserializeObject<List<PhoneBook>>(json);
+            return books;
+        }
+
     }
 }

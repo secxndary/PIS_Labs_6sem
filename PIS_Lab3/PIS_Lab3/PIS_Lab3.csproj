@@ -122,7 +122,6 @@
     <Content Include="Views\Dict\Index.cshtml" />
     <Content Include="Views\Dict\Create.cshtml" />
     <Content Include="Views\Dict\Edit.cshtml" />
-    <Content Include="Views\Dict\Delete.cshtml" />
     <Content Include="Views\Shared\_Notification.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
