@@ -8,6 +8,7 @@ namespace PIS_Lab3.Controllers
 {
     public class DictController : Controller
     {
+
         // Method to get first free ID in JSON list, 
         // e.g. if we deleted elements with id=4 and id=5,
         // this method will return me 4 as first free id.
@@ -55,13 +56,33 @@ namespace PIS_Lab3.Controllers
         [HttpPost]
         public ActionResult Create(PhoneBook phoneBook)
         {
-            var phoneBooksIds = GetPhoneBooks().Select(x => x.Id).ToList();
-            //var lastId = phoneBooksIds.Max(x => x);
-            var newPhoneBook = phoneBook;
-            newPhoneBook.Id = GetFirstFreeId();
             var newBooksList = GetPhoneBooks();
-            newBooksList.Add(newPhoneBook);
+            phoneBook.Id = GetFirstFreeId();
+            newBooksList.Add(phoneBook);
             var convertedJson = JsonConvert.SerializeObject(newBooksList, Formatting.Indented);
+            System.IO.File.WriteAllText(Server.MapPath("~/App_Data/phoneBooks.json"), convertedJson);
+            return Redirect("/Dict/Index");
+        }
+
+
+        // GET: Edit
+        public ActionResult Edit(int? id)
+        {
+            var phoneWithId = GetPhoneBooks().First(x => x.Id == id);
+            return View(phoneWithId);
+        }
+
+
+        // POST: Edit
+        [HttpPost]
+        public ActionResult Edit(PhoneBook phoneBook)
+        {
+            var books = GetPhoneBooks();
+            var bookFromJson = books.Find(x => x.PhoneNumber == phoneBook.PhoneNumber);
+            books.Remove(bookFromJson);
+            phoneBook.Id = bookFromJson.Id;
+            books.Add(phoneBook);
+            var convertedJson = JsonConvert.SerializeObject(books, Formatting.Indented);
             System.IO.File.WriteAllText(Server.MapPath("~/App_Data/phoneBooks.json"), convertedJson);
             return Redirect("/Dict/Index");
         }
@@ -70,54 +91,23 @@ namespace PIS_Lab3.Controllers
 
 
 
-
-
-
-
-
-
-        // GET: Dict/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Delete
+        public ActionResult Delete(int? id)
         {
+            var phoneWithId = GetPhoneBooks().First(x => x.Id == id);
             return View();
         }
 
-        // POST: Dict/Edit/5
+        // POST: Delete
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Delete(PhoneBook phoneBook)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Dict/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Dict/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            var books = GetPhoneBooks();
+            var bookFromJson = books.Find(x => x.PhoneNumber == phoneBook.PhoneNumber);
+            books.Remove(bookFromJson);
+            var convertedJson = JsonConvert.SerializeObject(books, Formatting.Indented);
+            System.IO.File.WriteAllText(Server.MapPath("~/App_Data/phoneBooks.json"), convertedJson);
+            return Redirect("/Dict/Index");
         }
 
 
