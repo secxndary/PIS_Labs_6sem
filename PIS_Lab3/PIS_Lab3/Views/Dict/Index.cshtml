@@ -1,0 +1,40 @@
+﻿@using PIS_Lab3.Models;
+@model List<PhoneBook>
+@{
+    ViewBag.Title = "PhoneBook List";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-dark">PhoneBook List</h2>
+        </div>
+        <div class="col-2 text-end">
+            <a class="btn btn-primary p-2 fs-6" style="width: 240px">Create PhoneBook</a>
+        </div>
+    </div>
+
+    <table class="table mt-4 table-striped" style="width: 70%">
+        <thead class="bg-dark text-light">
+            <tr>
+                <th>Id</th>
+                <th onclick="sortTable('surname')">Surname</th>
+                <th onclick="sortTable('name')">Name</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Surname</td>
+                    <td>@item.Name</td>
+                    <td>@item.PhoneNumber</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
