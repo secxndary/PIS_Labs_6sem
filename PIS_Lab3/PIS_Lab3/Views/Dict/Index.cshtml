@@ -10,7 +10,7 @@
             <h2 class="text-dark">PhoneBook List</h2>
         </div>
         <div class="col-2 text-end">
-            <a class="btn btn-primary p-2 fs-6" style="width: 240px">Create PhoneBook</a>
+            <a class="btn btn-primary p-2 fs-6" style="width: 240px" href="Create">Create PhoneBook</a>
         </div>
     </div>
 
@@ -18,8 +18,14 @@
         <thead class="bg-dark text-light">
             <tr>
                 <th>Id</th>
-                <th onclick="sortTable('surname')">Surname</th>
-                <th onclick="sortTable('name')">Name</th>
+                <th onclick="sortTable('Surname')">
+                    Surname &nbsp;
+                    @*<i class="bi bi-sort-alpha-down"></i>*@
+                </th>
+                <th onclick="sortTable('Name')">
+                    Name &nbsp;
+                    @*<i class="bi bi-sort-alpha-down"></i>*@
+                </th>
                 <th>Phone Number</th>
             </tr>
         </thead>
@@ -36,5 +42,16 @@
         </tbody>
     </table>
 
+
+    @*<script>
+        function sortTable(column) {
+            $.ajax({
+                url: "/Dict/SortByColumn?column=" + column,
+                success: function (data) {
+                    $('table tbody').html(data);
+                }
+            });
+        }
+    </script>*@
 </div>
 
