@@ -11,7 +11,7 @@ namespace PIS_Lab3
 
             routes.MapRoute(
                 name: "2-parameters Route",
-                url: "Dict/{action}",
+                url: "{controller}/{action}",
                 defaults: new { controller = "Dict", action = "Index" }
             );
 

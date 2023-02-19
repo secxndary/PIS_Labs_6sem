@@ -107,9 +107,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DictController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Error.cs" />
     <Compile Include="Models\PhoneBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,6 +125,7 @@
     <Content Include="Views\Dict\Create.cshtml" />
     <Content Include="Views\Dict\Edit.cshtml" />
     <Content Include="Views\Shared\_Notification.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
