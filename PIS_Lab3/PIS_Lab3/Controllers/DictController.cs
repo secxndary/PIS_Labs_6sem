@@ -34,7 +34,7 @@ namespace PIS_Lab3.Controllers
             var convertedJson = JsonConvert.SerializeObject(newBooksList, Formatting.Indented);
             System.IO.File.WriteAllText(Server.MapPath("~/App_Data/phoneBooks.json"), convertedJson);
             TempData["success"] = "Phonebook created succesfully";
-            return Redirect("/Dict/Index");
+            return Redirect("/./");
         }
 
 
@@ -58,7 +58,7 @@ namespace PIS_Lab3.Controllers
             var convertedJson = JsonConvert.SerializeObject(books, Formatting.Indented);
             System.IO.File.WriteAllText(Server.MapPath("~/App_Data/phoneBooks.json"), convertedJson);
             TempData["success"] = "Phonebook updated succesfully";
-            return Redirect("/Dict/Index");
+            return Redirect("/./");
         }
 
 
@@ -72,7 +72,7 @@ namespace PIS_Lab3.Controllers
             var convertedJson = JsonConvert.SerializeObject(books, Formatting.Indented);
             System.IO.File.WriteAllText(Server.MapPath("~/App_Data/phoneBooks.json"), convertedJson);
             TempData["success"] = "Phonebook deleted succesfully";
-            return Redirect("/Dict/Index");
+            return Redirect("/./");
         }
 
 
