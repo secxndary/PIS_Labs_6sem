@@ -30,12 +30,6 @@
     "PhoneNumber": "+375297493829"
   },
   {
-    "Id": 6,
-    "Name": "Антон",
-    "Surname": "Апаланюк",
-    "PhoneNumber": "+375297749274"
-  },
-  {
     "Id": 7,
     "Name": "Антон",
     "Surname": "Ткачёв",
@@ -46,5 +40,11 @@
     "Name": "Антон",
     "Surname": "Кузьмич",
     "PhoneNumber": "+375449238845"
+  },
+  {
+    "Id": 6,
+    "Name": "qwe",
+    "Surname": "zxc",
+    "PhoneNumber": "+375297749274"
   }
 ]
