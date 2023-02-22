@@ -25,6 +25,7 @@
                 context.PhoneBooks.AddOrUpdate(DummyData.GetPhoneBooks().ToArray());
                 context.SaveChanges();
             }
+            // код со стаковерфлоу который напишет в консоль подробную ошибку при исключении "Validation failed for one or more entities. See 'EntityValidationErrors' property for more details."
             catch (DbEntityValidationException e)
             {
                 foreach (var eve in e.EntityValidationErrors)
@@ -41,9 +42,6 @@
                 }
                 throw;
             }
-
-
-
         }
     }
 }
