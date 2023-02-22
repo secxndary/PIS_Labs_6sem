@@ -39,7 +39,7 @@ namespace PIS_Lab4.Repository
         {
             try
             {
-                var bookFromDb = GetPhoneBooks().Find(x => x.PhoneNumber == phoneBook.PhoneNumber);
+                var bookFromDb = GetPhoneBooks().Find(x => x.Surname == phoneBook.Surname);
                 context.PhoneBooks.Remove(bookFromDb);
                 phoneBook.Id = bookFromDb.Id;
                 context.PhoneBooks.Add(phoneBook);
@@ -54,9 +54,8 @@ namespace PIS_Lab4.Repository
         {
             try
             {
-                var books = GetPhoneBooks();
-                var bookFromDb = books.Find(x => x.Id == phoneBook.Id);
-                books.Remove(bookFromDb);
+                var bookFromDb = GetPhoneBooks().Find(x => x.Id == phoneBook.Id);
+                context.PhoneBooks.Remove(bookFromDb);
                 context.SaveChanges();
                 return true;
             }

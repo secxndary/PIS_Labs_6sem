@@ -327,21 +327,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\PhoneBooks\202302221012286_Initial Migration.cs" />
-    <Compile Include="Migrations\PhoneBooks\202302221012286_Initial Migration.designer.cs">
-      <DependentUpon>202302221012286_Initial Migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\PhoneBooks\202302221325482_Added Dummy data.cs" />
-    <Compile Include="Migrations\PhoneBooks\202302221325482_Added Dummy data.designer.cs">
-      <DependentUpon>202302221325482_Added Dummy data.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\PhoneBooks\202302221451544_Removed [Key] from Id in Model.cs" />
-    <Compile Include="Migrations\PhoneBooks\202302221451544_Removed [Key] from Id in Model.designer.cs">
-      <DependentUpon>202302221451544_Removed [Key] from Id in Model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\PhoneBooks\202302221507037_Dropped table and started from begining.cs" />
-    <Compile Include="Migrations\PhoneBooks\202302221507037_Dropped table and started from begining.designer.cs">
-      <DependentUpon>202302221507037_Dropped table and started from begining.cs</DependentUpon>
+    <Compile Include="Migrations\PhoneBooks\202302221526366_okay poxuy.cs" />
+    <Compile Include="Migrations\PhoneBooks\202302221526366_okay poxuy.designer.cs">
+      <DependentUpon>202302221526366_okay poxuy.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\PhoneBooks\Configuration.cs" />
     <Compile Include="Models\Error.cs" />
@@ -369,17 +357,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\PhoneBooks\202302221012286_Initial Migration.resx">
-      <DependentUpon>202302221012286_Initial Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\PhoneBooks\202302221325482_Added Dummy data.resx">
-      <DependentUpon>202302221325482_Added Dummy data.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\PhoneBooks\202302221451544_Removed [Key] from Id in Model.resx">
-      <DependentUpon>202302221451544_Removed [Key] from Id in Model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\PhoneBooks\202302221507037_Dropped table and started from begining.resx">
-      <DependentUpon>202302221507037_Dropped table and started from begining.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\PhoneBooks\202302221526366_okay poxuy.resx">
+      <DependentUpon>202302221526366_okay poxuy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

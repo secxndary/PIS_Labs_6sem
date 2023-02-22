@@ -7,13 +7,13 @@ namespace PIS_Lab4.Migrations.PhoneBooks
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitialMigration : IMigrationMetadata
+    public sealed partial class okaypoxuy : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(okaypoxuy));
         
         string IMigrationMetadata.Id
         {
-            get { return "202302221012286_Initial Migration"; }
+            get { return "202302221526366_okay poxuy"; }
         }
         
         string IMigrationMetadata.Source
