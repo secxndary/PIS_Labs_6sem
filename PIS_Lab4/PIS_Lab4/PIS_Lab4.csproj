@@ -335,6 +335,14 @@
     <Compile Include="Migrations\PhoneBooks\202302221325482_Added Dummy data.designer.cs">
       <DependentUpon>202302221325482_Added Dummy data.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\PhoneBooks\202302221451544_Removed [Key] from Id in Model.cs" />
+    <Compile Include="Migrations\PhoneBooks\202302221451544_Removed [Key] from Id in Model.designer.cs">
+      <DependentUpon>202302221451544_Removed [Key] from Id in Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PhoneBooks\202302221507037_Dropped table and started from begining.cs" />
+    <Compile Include="Migrations\PhoneBooks\202302221507037_Dropped table and started from begining.designer.cs">
+      <DependentUpon>202302221507037_Dropped table and started from begining.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\PhoneBooks\Configuration.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Models\PhoneBook.cs" />
@@ -366,6 +374,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\PhoneBooks\202302221325482_Added Dummy data.resx">
       <DependentUpon>202302221325482_Added Dummy data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PhoneBooks\202302221451544_Removed [Key] from Id in Model.resx">
+      <DependentUpon>202302221451544_Removed [Key] from Id in Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PhoneBooks\202302221507037_Dropped table and started from begining.resx">
+      <DependentUpon>202302221507037_Dropped table and started from begining.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

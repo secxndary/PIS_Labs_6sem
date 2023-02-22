@@ -4,7 +4,6 @@ namespace PIS_Lab4.Models
 {
     public class PhoneBook
     {
-        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Name is required.")]
