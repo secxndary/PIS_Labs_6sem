@@ -314,27 +314,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\PhoneBookDb.mdf" />
-    <Content Include="App_Data\PhoneBookDb_log.ldf">
-      <DependentUpon>PhoneBookDb.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Context\ApplicationDbContext.cs" />
+    <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Controllers\DictController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Data\DummyData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202302211354337_CodeFirst PhoneBook.cs" />
-    <Compile Include="Migrations\202302211354337_CodeFirst PhoneBook.designer.cs">
-      <DependentUpon>202302211354337_CodeFirst PhoneBook.cs</DependentUpon>
+    <Compile Include="Migrations\PhoneBooks\202302221012286_Initial Migration.cs" />
+    <Compile Include="Migrations\PhoneBooks\202302221012286_Initial Migration.designer.cs">
+      <DependentUpon>202302221012286_Initial Migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\PhoneBooks\Configuration.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Models\PhoneBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -358,8 +355,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202302211354337_CodeFirst PhoneBook.resx">
-      <DependentUpon>202302211354337_CodeFirst PhoneBook.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\PhoneBooks\202302221012286_Initial Migration.resx">
+      <DependentUpon>202302221012286_Initial Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -15,7 +15,6 @@ namespace PIS_Lab4.Models
 
         [Phone]
         [Required(ErrorMessage = "Phone Number is required.")]
-        [RegularExpression("^+375[2349]{2}[0-9]{7}$", ErrorMessage = "Phone number must match the pattern.")]
         public string PhoneNumber { get; set; }
     }
 }
