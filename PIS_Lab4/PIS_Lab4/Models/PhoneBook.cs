@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PIS_Lab4.Models
 {
@@ -13,6 +14,7 @@ namespace PIS_Lab4.Models
         public string Surname { get; set; }
 
         [Phone]
+        [Index(IsUnique = true)]
         [Required(ErrorMessage = "Phone Number is required.")]
         public string PhoneNumber { get; set; }
     }

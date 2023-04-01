@@ -62,6 +62,12 @@
     <Reference Include="Microsoft.AspNetCore.Http.Features, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.1.1.2\lib\net451\Microsoft.AspNetCore.Http.Features.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.Base, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.Base.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Configuration.ConfigurationBuilders.UserSecrets, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.2.0.0\lib\Net471\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
@@ -331,6 +337,10 @@
     <Compile Include="Migrations\PhoneBooks\202302221526366_okay poxuy.designer.cs">
       <DependentUpon>202302221526366_okay poxuy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\PhoneBooks\202303170714171_Initial Migration.cs" />
+    <Compile Include="Migrations\PhoneBooks\202303170714171_Initial Migration.designer.cs">
+      <DependentUpon>202303170714171_Initial Migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\PhoneBooks\Configuration.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Models\PhoneBook.cs" />
@@ -359,6 +369,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\PhoneBooks\202302221526366_okay poxuy.resx">
       <DependentUpon>202302221526366_okay poxuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PhoneBooks\202303170714171_Initial Migration.resx">
+      <DependentUpon>202303170714171_Initial Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
