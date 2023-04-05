@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AResearchController.cs" />
+    <Compile Include="Controllers\CHResearchController.cs" />
     <Compile Include="Controllers\MResearchController.cs" />
     <Compile Include="Filters\AAFilterAttribute.cs" />
     <Compile Include="Filters\AEFilterAttribute.cs" />
