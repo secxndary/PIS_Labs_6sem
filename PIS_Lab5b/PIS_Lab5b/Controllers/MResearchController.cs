@@ -16,21 +16,20 @@ namespace PIS_Lab5b.Controllers
 
 
         [AcceptVerbs("GET", "DELETE")]
-        [Route("{f:float}/{str:length(2,5)}")] 
+        [Route("{f:float}/{str:length(2,5)}")]
         public string M03(float f, string str) => $"{HttpContext.Request.HttpMethod}: M03: /{f}/{str}";
 
 
         [AcceptVerbs("PUT")]
-        [Route("{letters:alpha}/{n:int}")]
+        [Route("{letters:alpha:length(3,4)}/{n:int:range(100,200)}")]
         public string M04(string letters, int n) => $"{HttpContext.Request.HttpMethod}: M04: /{letters}/{n}";
 
 
         [AcceptVerbs("POST")]
-        [Route("{mail:regex(^\\w+@\\w+.\\w+$)}")]
+        [Route("{mail:regex(^\\w+@\\w+)}")]
         public string M05(string mail) => $"{HttpContext.Request.HttpMethod}: M05: /{mail}";
 
 
         public string MXX() => "404 Error";
-        public string MXXX() => "405 Error";
     }
 }

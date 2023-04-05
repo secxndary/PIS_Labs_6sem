@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace PIS_Lab5b
@@ -14,6 +10,10 @@ namespace PIS_Lab5b
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapMvcAttributeRoutes();
+
+            routes.MapRoute("AReserach_Action", "AA", new { controller = "AResearch", action = "AA" });
+            routes.MapRoute("AReserach_Result", "AR", new { controller = "AResearch", action = "AR" });
+            routes.MapRoute("AReserach_Exception", "AE", new { controller = "AResearch", action = "AE" });
 
             routes.MapRoute("MXX", "MResearch/MXX", new { controller = "MResearch", action = "MXX" });
         }
