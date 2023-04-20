@@ -14,11 +14,11 @@ namespace PIS_Lab4.Repository
 
         public List<PhoneBook> GetPhoneBooks()
         {
-            try
-            {
+            //try
+            //{
                 return context.PhoneBooks.ToList();
-            }
-            catch { return new List<PhoneBook>(); }
+            //}
+            //catch { return new List<PhoneBook>(); }
         }
 
 

@@ -333,13 +333,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\PhoneBooks\202302221526366_okay poxuy.cs" />
-    <Compile Include="Migrations\PhoneBooks\202302221526366_okay poxuy.designer.cs">
-      <DependentUpon>202302221526366_okay poxuy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\PhoneBooks\202303170714171_Initial Migration.cs" />
-    <Compile Include="Migrations\PhoneBooks\202303170714171_Initial Migration.designer.cs">
-      <DependentUpon>202303170714171_Initial Migration.cs</DependentUpon>
+    <Compile Include="Migrations\PhoneBooks\202304140529381_Initial Migration.cs" />
+    <Compile Include="Migrations\PhoneBooks\202304140529381_Initial Migration.designer.cs">
+      <DependentUpon>202304140529381_Initial Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\PhoneBooks\Configuration.cs" />
     <Compile Include="Models\Error.cs" />
@@ -367,11 +363,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\PhoneBooks\202302221526366_okay poxuy.resx">
-      <DependentUpon>202302221526366_okay poxuy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\PhoneBooks\202303170714171_Initial Migration.resx">
-      <DependentUpon>202303170714171_Initial Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\PhoneBooks\202304140529381_Initial Migration.resx">
+      <DependentUpon>202304140529381_Initial Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
