@@ -26,7 +26,7 @@ namespace PIS_Lab5b.Controllers
 
 
         [AcceptVerbs("POST")]
-        [Route("{mail:regex(\\w+@\\w+\\.\\w+)}")]
+        [Route("{mail:regex(^\\w+@\\w+\\.\\w+$)}")]
         public string M05(string mail) => $"{HttpContext.Request.HttpMethod}: M05: /{mail}";
 
 

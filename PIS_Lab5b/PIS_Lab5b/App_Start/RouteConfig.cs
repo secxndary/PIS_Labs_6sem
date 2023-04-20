@@ -10,7 +10,7 @@ namespace PIS_Lab5b
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapMvcAttributeRoutes();
 
-            routes.MapRoute("Default", "{controller}/{action}", new { controller = "AResearch", action = "AA" })
+            routes.MapRoute("Default", "{controller}/{action}", new { controller = "AResearch", action = "AA" });
             routes.MapRoute("MXX", "MResearch/MXX", new { controller = "MResearch", action = "MXX" });
         }
     }
