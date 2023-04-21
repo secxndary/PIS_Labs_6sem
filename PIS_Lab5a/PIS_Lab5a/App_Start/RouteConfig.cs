@@ -11,13 +11,27 @@ namespace PIS_Lab5a
             routes.MapMvcAttributeRoutes();
 
 
-            routes.MapRoute("V3",                       "V3",                           new { controller = "MResearch", action = "M03" });
-            routes.MapRoute("V3/Controller/X/Action",   "V3/{controller}/X/{action}",   new { controller = "MResearch", action = "M03" });
-            routes.MapRoute("V2/Controller/Action",     "V2/{controller}/{action}",     new { controller = "MResearch", action = "M02" });
-            routes.MapRoute("Controller/Action/Id",     "{controller}/{action}/{id}",   new { controller = "MResearch", action = "M01", 
-                                                                                                            id = UrlParameter.Optional });
+            routes.MapRoute(
+                name: "V3/Controller/X/Action",   
+                url: "V3/{controller}/{x}/{action}", 
+                defaults: new { controller = "MResearch", action = "M03", x = UrlParameter.Optional });
+                
+            routes.MapRoute(
+                name: "V2/Controller/Action",     
+                url: "V2/{controller}/{action}",     
+                defaults: new { controller = "MResearch", action = "M02" },
+                constraints: new { action = "(?!M03).*" });
 
-            routes.MapRoute("MXX",                      "MResearch/MXX",                new { controller = "MResearch", action = "MXX" });
+            routes.MapRoute(
+                name: "Controller/Action/Id",     
+                url: "{controller}/{action}/{id}",   
+                defaults: new { controller = "MResearch", action = "M01", id = UrlParameter.Optional },
+                constraints: new { action = "(?!M03).*" });
+            
+            routes.MapRoute(
+                name: "MXX", 
+                url: "MResearch/MXX",
+                defaults: new { controller = "MResearch", action = "MXX" });
         }
     }
 }
