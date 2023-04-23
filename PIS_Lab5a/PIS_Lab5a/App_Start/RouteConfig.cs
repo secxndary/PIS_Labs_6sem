@@ -15,7 +15,7 @@ namespace PIS_Lab5a
                 name: "V3/Controller/X/Action",   
                 url: "V3/{controller}/{x}/{action}", 
                 defaults: new { controller = "MResearch", action = "M03", x = UrlParameter.Optional });
-                
+
             routes.MapRoute(
                 name: "V2/Controller/Action",     
                 url: "V2/{controller}/{action}",     
