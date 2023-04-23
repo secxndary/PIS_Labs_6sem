@@ -19,7 +19,7 @@ namespace PIS_Lab5b.Controllers
 
 
         [HttpPost]
-        [OutputCache(Duration = 7, Location = OutputCacheLocation.Server)]
+        [OutputCache(Duration = 7, Location = OutputCacheLocation.ServerAndClient)]
         public ActionResult AP(string x, string y)
         {
             return Content($"AP: x = {x}, y = {y} ({DateTime.Now})");
