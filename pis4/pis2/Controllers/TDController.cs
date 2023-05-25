@@ -18,16 +18,19 @@ namespace pis2.Controllers
             _tdService = tdService;
         }
 
+
         public ActionResult Index()
         {
             var model = _tdService.GetAll();
             return View(model);
         }
 
+
         public ActionResult Add(string phoneNumber, string ownerName)
         {
             return View();
         }
+
 
         public ActionResult Update(int id)
         {
@@ -35,11 +38,13 @@ namespace pis2.Controllers
             return View(model);
         }
 
+
         public ActionResult Delete(int id)
         {
             var model = _tdService.Get(id);
             return View(model);
         }
+
 
         [HttpPost]
         public ActionResult AddSave(string phoneNumber, string ownerName)
@@ -48,12 +53,14 @@ namespace pis2.Controllers
             return View("Index", _tdService.GetAll());
         }
 
+
         [HttpPost]
         public ActionResult DeleteSave(int id)
         {
             _tdService.Delete(id);
             return View("Index", _tdService.GetAll());
         }
+
 
         [HttpPost]
         public ActionResult UpdateSave(int id, string phoneNumber, string ownerName)
