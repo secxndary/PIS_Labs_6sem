@@ -29,12 +29,20 @@ namespace PIS_Lab5a.Controllers
 
         public string C02()
         {
+            var request = HttpContext.Request;
             var response = HttpContext.Response;
+            var method = request.HttpMethod;
             var statusCode = response.StatusCode;
             var statusMessage = response.Status;
             var headers = response.Headers;
+            var body = "";
 
-            return $"Код ответа: {statusCode}<br>Сообщение ответа: {statusMessage}<br>Заголовки: {headers}<br>";
+            if (method == "POST")
+                using (var reader = new StreamReader(request.InputStream))
+                    body = reader.ReadToEnd();
+
+
+            return $"Код ответа: {statusCode}<br>Сообщение ответа: {statusMessage}<br>Заголовки: {headers}<br>Тело: {body}";
         }
     }
 }

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pis2", "pis2\pis2.csproj", "{14D80B2E-C84C-49F6-9F74-E7671D44F2B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pisda5", "pisda5\pisda5.csproj", "{51F19B7C-B923-4F1F-A6B1-CA7CF57DC989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pizda", "pizda\pizda.csproj", "{BEF850D1-EDCE-4E8A-B2E1-4080DEB7A57F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14D80B2E-C84C-49F6-9F74-E7671D44F2B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D80B2E-C84C-49F6-9F74-E7671D44F2B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D80B2E-C84C-49F6-9F74-E7671D44F2B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D80B2E-C84C-49F6-9F74-E7671D44F2B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F19B7C-B923-4F1F-A6B1-CA7CF57DC989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F19B7C-B923-4F1F-A6B1-CA7CF57DC989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F19B7C-B923-4F1F-A6B1-CA7CF57DC989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F19B7C-B923-4F1F-A6B1-CA7CF57DC989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEF850D1-EDCE-4E8A-B2E1-4080DEB7A57F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEF850D1-EDCE-4E8A-B2E1-4080DEB7A57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEF850D1-EDCE-4E8A-B2E1-4080DEB7A57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEF850D1-EDCE-4E8A-B2E1-4080DEB7A57F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE81FFE2-DEFB-443C-B18A-6011EBFE7C51}
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal
