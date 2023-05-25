@@ -1,9 +1,6 @@
 ﻿using pis2.Contracts;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.SessionState;
+
 
 namespace pis2.Models
 {
@@ -14,20 +11,24 @@ namespace pis2.Models
             JsonHelper.AppendToEnd(phoneNumber, ownerName);
         }
 
+
         public void Delete(int id)
         {
             JsonHelper.Delete(id);
         }
 
+
         public Phone Get(int id)
         {
-            return null;
+            return JsonHelper.GetById(id);
         }
+
 
         public IEnumerable<Phone> GetAll()
         {
             return JsonHelper.LoadFromJson();
         }
+
 
         public void Update(Phone phone)
         {

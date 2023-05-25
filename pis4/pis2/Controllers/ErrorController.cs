@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace pis2.Controllers
 {
@@ -18,7 +14,7 @@ namespace pis2.Controllers
                 str += HttpContext.Request.Url.Query[i];
             }
 
-          return $"{HttpContext.Request.HttpMethod}:{str} doesn't supported ";
+            return $"[ERROR] 404: Cannot find {HttpContext.Request.HttpMethod}:{str}";
         }
     }
 }

@@ -1,10 +1,5 @@
 ﻿using pis2.Contracts;
 using pis2.Models;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace pis2.Controllers

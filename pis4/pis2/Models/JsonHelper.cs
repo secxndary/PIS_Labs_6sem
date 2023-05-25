@@ -1,12 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.SessionState;
+
 
 namespace pis2.Models
 {
@@ -24,11 +20,13 @@ namespace pis2.Models
             }
         }
 
+
         public static void SaveToJson(IEnumerable<Phone> phones)
         { 
             string json = JsonConvert.SerializeObject(phones, Formatting.Indented);
             File.WriteAllText(path, json);
         }
+
 
         public static void AppendToEnd(string number, string name) 
         {
@@ -45,6 +43,7 @@ namespace pis2.Models
             SaveToJson(phones);
         }
 
+
         public static void Delete(int id)
         {
             var phones = LoadFromJson().ToList();
@@ -56,6 +55,7 @@ namespace pis2.Models
             phones.Remove(item);
             SaveToJson(phones);
         }
+
 
         public static void Update(Phone phone)
         {
@@ -72,6 +72,12 @@ namespace pis2.Models
             item.OwnerName = phone.OwnerName;
 
             SaveToJson(phones);
+        }
+
+
+        public static Phone GetById(int id)
+        {
+            return LoadFromJson().ToList().Where(x => x.Id == id).FirstOrDefault();
         }
     }
 }

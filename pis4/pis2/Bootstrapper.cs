@@ -1,10 +1,10 @@
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using Ninject.Modules;
-using Ninject.Web.Common;
 using pis2.Contracts;
 using pis2.Models;
 using Unity.Mvc3;
+
 
 namespace pis2
 {
