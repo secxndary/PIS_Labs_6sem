@@ -191,6 +191,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ExternalHelpers.cs" />
+    <Compile Include="Migrations\PhoneBooks\202305252043109_Initial Migration.cs" />
+    <Compile Include="Migrations\PhoneBooks\202305252043109_Initial Migration.designer.cs">
+      <DependentUpon>202305252043109_Initial Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PhoneBooks\Configuration.cs" />
     <Compile Include="Models\TDDbContext.cs" />
     <Compile Include="Models\JsonHelper.cs" />
     <Compile Include="Models\Phone.cs" />
@@ -218,6 +223,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\PhoneBooks\202305252043109_Initial Migration.resx">
+      <DependentUpon>202305252043109_Initial Migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

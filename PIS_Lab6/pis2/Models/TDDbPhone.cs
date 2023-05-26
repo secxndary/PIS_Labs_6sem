@@ -1,8 +1,7 @@
 ﻿using pis2.Contracts;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+
 
 namespace pis2.Models
 {
@@ -15,11 +14,13 @@ namespace pis2.Models
             _db = db;
         }     
 
+
         public void Add(string phoneNumber, string ownerName)
         {
             _db.Phone.Add(new Phone { PhoneNumber = phoneNumber, OwnerName = ownerName });
             _db.SaveChanges();
         }
+
 
         public void Delete(int id)
         {
@@ -31,17 +32,20 @@ namespace pis2.Models
             _db.SaveChanges();
         }
 
+
         public Phone Get(int id)
         {
             var phone = _db.Phone.FirstOrDefault(x => x.Id == id);
             return phone;
         }
 
+
         public IEnumerable<Phone> GetAll()
         {
             var data = _db.Phone.Select(x => x).ToList();
             return data;
         }
+
 
         public void Update(Phone phone)
         {

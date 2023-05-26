@@ -14,10 +14,10 @@ namespace pis2
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            //unity container
-            //Bootstrapper.Initialise();
+            // unity container
+            // Bootstrapper.Initialise();
 
-            //ninject container
+            // ninject container
             NinjectModule registrations = new NinjectRegistrations();
             var kernel = new StandardKernel(registrations);
             DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));

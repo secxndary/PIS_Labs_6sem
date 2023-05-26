@@ -12,44 +12,42 @@ namespace pis2
     {
         public override void Load()
         {
-            
-            //Bind<IDbContext>().To<TDDbContext>();
+            // использование бд mssql
+            Bind<IDbContext>().To<TDDbContext>();
 
-            //Очевидно - один объект на всё приложение
-            //Bind<ITD>().To<TDDbPhone>().InSingletonScope();
 
-            //Опять очевидно - работает только в рамках одного потока
+            // только один объект на весь жизненный цикл приложения
+            // Bind<ITD>().To<TDDbPhone>().InSingletonScope();
+
+            // создается для каждого потока
             //Bind<ITD>().To<TDDbPhone>().InThreadScope();
 
-            //Ну прям база - для одного http-запроса
-            //Bind<ITD>().To<TDDbPhone>().InRequestScope();
+            // для каждого http-запроса
+            // Bind<ITD>().To<TDDbPhone>().InRequestScope();
+
+            // создание объекта каждый раз когда он запрошен из контейнера
+            Bind<ITD>().To<TDDbPhone>().InTransientScope();
 
 
-            //По сути, будет создавать отдельные объекты под каждое внедрение
-            //Используется по дефолту
-            //Bind<ITD>().To<TDDbPhone>().InTransientScope();
-
-
-            //json
-            Bind<ITD>().To<TD>();
+            // json
+            // Bind<ITD>().To<TD>();
         }
     }
+
 
     public static class Bootstrapper
     {
         public static void Initialise()
         {
             var container = BuildUnityContainer();
-
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
+
 
         private static IUnityContainer BuildUnityContainer()
         {
             var container = new UnityContainer();
-
             container.RegisterType<IDbContext, TDDbContext>();
-
             container.RegisterType<ITD, TDDbPhone>();
 
             // register all your components with the container here
