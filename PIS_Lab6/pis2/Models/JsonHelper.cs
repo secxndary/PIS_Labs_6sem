@@ -11,7 +11,7 @@ namespace pis2.Models
         // вынужденный хардкод
         public static string path = @"C:\Users\valda\source\repos\semester#6\ПИС\PIS_Lab6\pis2\data.json";
 
-        public static IEnumerable<Phone> LoadFromJson() 
+        public static IEnumerable<Phone> LoadFromJson()
         {
             using (StreamReader r = File.OpenText(path))
             {

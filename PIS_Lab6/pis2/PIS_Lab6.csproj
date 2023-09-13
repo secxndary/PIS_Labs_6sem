@@ -158,7 +158,6 @@
   <ItemGroup>
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Unity.Mvc3.README.txt" />
     <Content Include="Web.config" />
     <Content Include="Views\TD\Phone.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />

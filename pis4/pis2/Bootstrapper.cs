@@ -12,8 +12,8 @@ namespace pis2
     {
         public override void Load()
         {
-            
-            //Bind<IDbContext>().To<TDDbContext>();
+
+            Bind<IDbContext>().To<TDDbContext>();
 
             //Очевидно - один объект на всё приложение
             //Bind<ITD>().To<TDDbPhone>().InSingletonScope();
@@ -27,11 +27,11 @@ namespace pis2
 
             //По сути, будет создавать отдельные объекты под каждое внедрение
             //Используется по дефолту
-            //Bind<ITD>().To<TDDbPhone>().InTransientScope();
+            Bind<ITD>().To<TDDbPhone>().InTransientScope();
 
 
             //json
-            Bind<ITD>().To<TD>();
+            //Bind<ITD>().To<TD>();
         }
     }
 

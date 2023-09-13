@@ -15,7 +15,7 @@ namespace pis2
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             // unity container
-            // Bootstrapper.Initialise();
+            //Bootstrapper.Initialise();
 
             // ninject container
             NinjectModule registrations = new NinjectRegistrations();

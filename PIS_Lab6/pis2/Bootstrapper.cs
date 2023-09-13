@@ -16,21 +16,17 @@ namespace pis2
             Bind<IDbContext>().To<TDDbContext>();
 
 
-            // только один объект на весь жизненный цикл приложения
-            // Bind<ITD>().To<TDDbPhone>().InSingletonScope();
+            Bind<ITD>().To<TDDbPhone>().InSingletonScope();
 
-            // создается для каждого потока
             //Bind<ITD>().To<TDDbPhone>().InThreadScope();
 
-            // для каждого http-запроса
-            // Bind<ITD>().To<TDDbPhone>().InRequestScope();
+            //Bind<ITD>().To<TDDbPhone>().InRequestScope();
 
-            // создание объекта каждый раз когда он запрошен из контейнера
-            Bind<ITD>().To<TDDbPhone>().InTransientScope();
+            //Bind<ITD>().To<TDDbPhone>().InTransientScope();
 
 
             // json
-            // Bind<ITD>().To<TD>();
+            //Bind<ITD>().To<TD>();
         }
     }
 
